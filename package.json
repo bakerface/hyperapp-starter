@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prebuild": "rimraf .cache dist",
     "build": "parcel build src/index.html",
     "postbuild": "prerender dist /",
     "dev": "parcel -p 8080 --hmr-port 8081 src/index.html",
@@ -46,6 +47,7 @@
     "postcss-syntax": "^0.10.0",
     "prerender-jsdom": "^1.0.2",
     "prettier": "^1.13.2",
+    "rimraf": "^2.6.2",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0"

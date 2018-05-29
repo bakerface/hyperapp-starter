@@ -1,4 +1,4 @@
-import { h } from "hyperapp";
+import { div } from "./components/elements";
 import { location } from "@hyperapp/router";
 
 export const state = {
@@ -9,4 +9,4 @@ export const actions = {
   location: location.actions
 };
 
-export const view = () => h("div", { id: "app" }, []);
+export const view = () => div({ id: "app" });

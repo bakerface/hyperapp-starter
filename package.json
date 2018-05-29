@@ -1,0 +1,53 @@
+{
+  "name": "hyperapp-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "postbuild": "prerender dist /",
+    "dev": "parcel -p 8080 --hmr-port 8081 src/index.html",
+    "precommit": "lint-staged",
+    "start": "pushstate-server dist"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "pushstate-server": "^3.0.1"
+  },
+  "devDependencies": {
+    "@hyperapp/router": "^0.7.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "hyperapp": "^1.2.5",
+    "lint-staged": "^7.1.2",
+    "parcel-bundler": "^1.8.1",
+    "postcss-syntax": "^0.10.0",
+    "prerender-jsdom": "^1.0.2",
+    "prettier": "^1.13.2",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.0"
+  }
+}

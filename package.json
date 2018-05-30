@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "rimraf .cache dist",
     "build": "parcel build src/index.html",
-    "postbuild": "prerender dist /",
     "dev": "parcel -p 8080 --hmr-port 8081 src/index.html",
+    "inline": "posthtml-inline dist index.html",
+    "postbuild": "npm run prerender && npm run inline",
+    "prebuild": "rimraf .cache dist",
     "precommit": "lint-staged",
+    "prerender": "prerender dist /",
     "start": "pushstate-server dist"
   },
   "browserslist": [
@@ -45,6 +47,7 @@
     "lint-staged": "^7.1.2",
     "parcel-bundler": "^1.8.1",
     "postcss-syntax": "^0.10.0",
+    "posthtml-inline": "^1.0.0",
     "prerender-jsdom": "^1.0.2",
     "prettier": "^1.13.2",
     "rimraf": "^2.6.2",

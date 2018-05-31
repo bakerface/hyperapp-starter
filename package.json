@@ -10,7 +10,8 @@
     "prebuild": "rimraf .cache dist",
     "precommit": "lint-staged",
     "prerender": "prerender dist /",
-    "start": "serve"
+    "start": "serve",
+    "test": "mocha 'src/**/*.test.js'"
   },
   "browserslist": [
     "> 1%",
@@ -45,6 +46,7 @@
     "husky": "^0.14.3",
     "hyperapp": "^1.2.5",
     "lint-staged": "^7.1.2",
+    "mocha": "^5.2.0",
     "parcel-bundler": "^1.8.1",
     "postcss-syntax": "^0.10.0",
     "posthtml-inline": "^1.0.0",

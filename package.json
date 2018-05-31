@@ -10,7 +10,7 @@
     "prebuild": "rimraf .cache dist",
     "precommit": "lint-staged",
     "prerender": "prerender dist /",
-    "start": "pushstate-server dist"
+    "start": "serve"
   },
   "browserslist": [
     "> 1%",
@@ -33,7 +33,7 @@
     ]
   },
   "dependencies": {
-    "pushstate-server": "^3.0.1"
+    "serve": "^7.1.5"
   },
   "devDependencies": {
     "@hyperapp/router": "^0.7.0",

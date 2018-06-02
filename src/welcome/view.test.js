@@ -1,9 +1,9 @@
 const assert = require("assert");
-const welcome = require("./welcome");
+const view = require("./view");
 
-describe("the welcome page", () => {
+describe("the welcome view", () => {
   it("should have a custom title", done => {
-    const render = welcome();
+    const render = view();
 
     render((t, p, c) => {
       if (t === "title") {
@@ -14,7 +14,7 @@ describe("the welcome page", () => {
   });
 
   it("should have a custom description", done => {
-    const render = welcome();
+    const render = view();
 
     render((t, p) => {
       if (t === "meta" && p.name === "description") {
@@ -25,7 +25,7 @@ describe("the welcome page", () => {
   });
 
   it("should have a welcome header", done => {
-    const render = welcome();
+    const render = view();
 
     render((t, p, c) => {
       if (t === "h1") {
